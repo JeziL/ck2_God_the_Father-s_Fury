@@ -12,11 +12,9 @@ title_decisions = {
             }
         }
         effect = {
-            ROOT = {
-                FROM = {
-                    character_event = {
-                        id = GTFF.001
-                    }
+            FROM = {
+                character_event = {
+                    id = GTFF.001
                 }
             }
         }
