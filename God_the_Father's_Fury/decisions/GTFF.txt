@@ -1,0 +1,27 @@
+title_decisions = {
+    HELP_ME_GOD = {
+        ai = no
+        ai_target_filter = none
+        filter = all
+        from_potential = {
+            ai = no
+        }
+        potential = {
+            NOT = {
+                higher_tier_than = COUNT
+            }
+        }
+        effect = {
+            ROOT = {
+                FROM = {
+                    character_event = {
+                        id = GTFF.001
+                    }
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}
