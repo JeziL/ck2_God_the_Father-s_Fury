@@ -7,7 +7,7 @@ title_decisions = {
             ai = no
         }
         effect = {
-            FROM = {
+            FROM = { # 决议执行者（玩家)
                 character_event = {
                     id = GTFF.001
                 }

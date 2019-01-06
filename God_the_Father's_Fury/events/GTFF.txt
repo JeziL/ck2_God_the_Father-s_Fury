@@ -5,38 +5,38 @@ character_event = {
     desc = EVTDESCGTFF.001
     picture = GFX_evt_battle
     is_triggered_only = yes
-    immediate = {
+    immediate = { # 确定并保存需要生成单位的省份
         if = {
             limit = {
-                FROM = {
+                FROM = { # 目标头衔
                     NOT = {
-                        higher_tier_than = COUNT
+                        higher_tier_than = COUNT # 等级为伯爵或以下
                     }
                 }
             }
             FROM = {
                 location = {
-                    save_event_target_as = holding_location
+                    save_event_target_as = holding_location # 保存所在省份用于生成单位
                 }
             }
         }
-        else = {
-            FROM = {
-                capital_scope = {
-                    save_event_target_as = holding_location
+        else = { # 目标头衔等级为公爵或以上
+            FROM = { # 目标头衔
+                capital_scope = { # 法理首都
+                    save_event_target_as = holding_location # 保存其法理首都所在省份用于生成单位
                 }
             }
         }
     }
     option = {
         name = EVTOPTAGTFF.001
-        event_target:holding_location = {
+        event_target:holding_location = { # 生成省份
             show_scope_change = no
-            ROOT = {
+            ROOT = { # 角色事件对象（玩家）
                 show_scope_change = no
                 spawn_unit = {
-                    owner = ROOT
-                    province = PREV
+                    owner = ROOT    # 角色事件对象（玩家）
+                    province = PREV # 生成省份
                     leader = none
                     earmark = GTFF_ARMY
                     maintenance_multiplier = 0
@@ -55,13 +55,13 @@ character_event = {
     }
     option = {
         name = EVTOPTBGTFF.001
-        event_target:holding_location = {
+        event_target:holding_location = { # 生成省份
             show_scope_change = no
-            ROOT = {
+            ROOT = { # 角色事件对象（玩家）
                 show_scope_change = no
                 spawn_unit = {
-                    owner = ROOT
-                    province = PREV
+                    owner = ROOT    # 角色事件对象（玩家）
+                    province = PREV # 生成省份
                     leader = none
                     earmark = GTFF_ARMY
                     maintenance_multiplier = 0
@@ -80,18 +80,18 @@ character_event = {
     }
     option = {
         name = EVTOPTCGTFF.001
-        trigger = {
-            event_target:holding_location = {
-                port = yes
+        trigger = { # 只有该省份有港口时才显示生成舰队的选项
+            event_target:holding_location = { # 生成省份
+                port = yes # 有港口
             }
         }
-        event_target:holding_location = {
+        event_target:holding_location = { # 生成省份
             show_scope_change = no
-            ROOT = {
+            ROOT = { # 角色事件对象（玩家）
                 show_scope_change = no
                 spawn_fleet = {
-                    owner = ROOT
-                    province = PREV
+                    owner = ROOT    # 角色事件对象（玩家）
+                    province = PREV # 生成省份
                     earmark = GTFF_ARMY
                     troops = {
                         galleys = { 2000 2000 }
@@ -100,7 +100,7 @@ character_event = {
             } 
         }
     }
-    option = {
+    option = { # 取消选项
         name = EVTOPTDGTFF.001
         ai_chance = {
             factor = 100
