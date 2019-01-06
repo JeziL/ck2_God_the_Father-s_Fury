@@ -17,8 +17,7 @@
 - 只有当该省份有港口时才会显示生成舰队的选项；
 - 如果选择的是公爵或以上头衔，军队（或舰队）会生成在该头衔法理首都所在的省份。
 
-![](https://i.loli.net/2019/01/06/5c31f454bb501.jpg)
-![](https://i.loli.net/2019/01/06/5c31f454c3661.jpg)
+<img src="https://i.loli.net/2019/01/06/5c31f454bb501.jpg" width=400/>&emsp;<img src="https://i.loli.net/2019/01/06/5c31f454c3661.jpg" width=400/>
 
 ## 其他
 
