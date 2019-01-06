@@ -6,11 +6,6 @@ title_decisions = {
         from_potential = {
             ai = no
         }
-        potential = {
-            NOT = {
-                higher_tier_than = COUNT
-            }
-        }
         effect = {
             FROM = {
                 character_event = {

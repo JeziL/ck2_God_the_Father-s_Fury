@@ -5,87 +5,99 @@ character_event = {
     desc = EVTDESCGTFF.001
     picture = GFX_evt_battle
     is_triggered_only = yes
-    option = {
-        name = EVTOPTAGTFF.001
-        FROM = {
-            show_scope_change = no
-            location = {
-                show_scope_change = no
-                ROOT = {
-                    show_scope_change = no
-                    spawn_unit = {
-                        owner = ROOT
-                        province = PREV
-                        leader = none
-                        earmark = GTFF_ARMY
-                        maintenance_multiplier = 0
-                        reinforces = yes
-                        troops = {
-                            horse_archers = { 2000 2000 }
-                            light_cavalry = { 1500 1500 }
-                            heavy_infantry = { 2000 2000 }
-                            pikemen = { 1000 1000 }
-                            knights = { 2500 2500 }
-                            archers = { 1000 1000 }	
-                        }
+    immediate = {
+        if = {
+            limit = {
+                FROM = {
+                    NOT = {
+                        higher_tier_than = COUNT
                     }
-                } 
+                }
+            }
+            FROM = {
+                location = {
+                    save_event_target_as = holding_location
+                }
+            }
+        }
+        else = {
+            FROM = {
+                capital_scope = {
+                    save_event_target_as = holding_location
+                }
             }
         }
     }
     option = {
-        name = EVTOPTBGTFF.001
-        FROM = {
+        name = EVTOPTAGTFF.001
+        event_target:holding_location = {
             show_scope_change = no
-            location = {
+            ROOT = {
                 show_scope_change = no
-                ROOT = {
-                    show_scope_change = no
-                    spawn_unit = {
-                        owner = ROOT
-                        province = PREV
-                        leader = none
-                        earmark = GTFF_ARMY
-                        maintenance_multiplier = 0
-                        reinforces = yes
-                        troops = {
-                            horse_archers = { 10000 10000 }
-                            light_cavalry = { 7500 7500 }
-                            heavy_infantry = { 10000 10000 }
-                            pikemen = { 5000 5000 }
-                            knights = { 12500 12500 }
-                            archers = { 5000 5000 }
-                        }
+                spawn_unit = {
+                    owner = ROOT
+                    province = PREV
+                    leader = none
+                    earmark = GTFF_ARMY
+                    maintenance_multiplier = 0
+                    reinforces = yes
+                    troops = {
+                        horse_archers = { 2000 2000 }
+                        light_cavalry = { 1500 1500 }
+                        heavy_infantry = { 2000 2000 }
+                        pikemen = { 1000 1000 }
+                        knights = { 2500 2500 }
+                        archers = { 1000 1000 }	
                     }
-                } 
-            }
+                }
+            } 
+        }
+    }
+    option = {
+        name = EVTOPTBGTFF.001
+        event_target:holding_location = {
+            show_scope_change = no
+            ROOT = {
+                show_scope_change = no
+                spawn_unit = {
+                    owner = ROOT
+                    province = PREV
+                    leader = none
+                    earmark = GTFF_ARMY
+                    maintenance_multiplier = 0
+                    reinforces = yes
+                    troops = {
+                        horse_archers = { 10000 10000 }
+                        light_cavalry = { 7500 7500 }
+                        heavy_infantry = { 10000 10000 }
+                        pikemen = { 5000 5000 }
+                        knights = { 12500 12500 }
+                        archers = { 5000 5000 }
+                    }
+                }
+            } 
         }
     }
     option = {
         name = EVTOPTCGTFF.001
         trigger = {
-            FROM = {
-                location = {
-                    port = yes
-                }
+            event_target:holding_location = {
+                port = yes
             }
         }
-        FROM = {
+        event_target:holding_location = {
             show_scope_change = no
-            location = {
+            ROOT = {
                 show_scope_change = no
-                ROOT = {
-                    show_scope_change = no
-                    spawn_fleet = {
-                        owner = ROOT
-                        province = PREV
-                        earmark = GTFF_ARMY
-                        troops = {
-                            galleys = { 2000 2000 }
-                        }
+                spawn_fleet = {
+                    owner = ROOT
+                    province = PREV
+                    earmark = GTFF_ARMY
+                    troops = {
+                        galleys = { 2000 2000 }
                     }
-                } 
-            }
+                }
+            } 
         }
     }
     option = {
