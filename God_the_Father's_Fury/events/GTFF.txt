@@ -63,6 +63,13 @@ character_event = {
     }
     option = {
         name = EVTOPTCGTFF.001
+        trigger = {
+            FROM = {
+                location = {
+                    port = yes
+                }
+            }
+        }
         FROM = {
             show_scope_change = no
             location = {
